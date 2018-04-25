@@ -1,2 +1,4 @@
-venv/
+venv/*
 db.sqlite3
+*.pyc
+lists/tests/test_models.py
