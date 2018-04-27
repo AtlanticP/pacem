@@ -1,4 +1,6 @@
 venv/*
 db.sqlite3
 *.pyc
-lists/tests/test_models.py
+# lists/static/lists/bootstrap/*
+# lists/static/jquery-3.3.1.js
+
