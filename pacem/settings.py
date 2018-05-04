@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'pacem.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'pacem_db',
-        'USER': 'root',
-        'PASSWORD': 'general',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        # 'USER': 'root',
+        # 'PASSWORD': 'general',
+        # 'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        # 'PORT': '3306',
     }
 }
 

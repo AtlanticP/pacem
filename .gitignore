@@ -1,6 +1,7 @@
 venv/*
-db.sqlite3
+asd.py
 *.pyc
+
 # lists/static/lists/bootstrap/*
 # lists/static/jquery-3.3.1.js
 
