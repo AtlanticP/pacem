@@ -3,3 +3,9 @@
 {% load static %}
 
 {% block title %}index.html{% endblock %}
+
+{% block body %}
+		{% for item in list.item_set.all %}
+			<pre>{{ item.name }}</pre>
+		{% endfor %}
+{% endblock %}
