@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}Add a new item{% endblock %}
+
+{% block body %}
+	<h2>{{ summed_items }}</h2>
+	<form action="{% url 'do' %}">
+		{% csrf_token %}
+		<p>{{ item_form }}</p>
+		<input type='submit' value='Submit' />
+	</form>
+{% endblock %}
