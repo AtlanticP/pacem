@@ -1,9 +1,12 @@
 from django.db import models
 
 class List(models.Model):
+  
   lan = models.CharField(max_length=20)
+  
   def __str__(self):
     return self.lan
+
 
 class Item(models.Model):
   lst = models.ForeignKey(List, on_delete=models.CASCADE)
