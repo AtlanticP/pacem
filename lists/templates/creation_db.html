@@ -6,9 +6,9 @@
 
 {% block body %}
 	<h2>{{ summed_items }}</h2>
-	<form action="{% url 'do' %}">
+	<form action="{% url 'do' %}" method="post">
 		{% csrf_token %}
-		<p>{{ item_form }}</p>
+		{{ item_form }}
 		<input type='submit' value='Submit' />
 	</form>
 {% endblock %}

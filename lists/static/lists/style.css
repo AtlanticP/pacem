@@ -1,3 +1,14 @@
 body {
 	background-color: #62639B;
 }
+
+.text_code {
+  background: #a192b5;
+  padding: 10px; /* Поля вокруг блока */
+  border: 1px solid; /* Рамка */
+  margin: 10px;  /* Отступы вокруг */
+}
+
+.name_code {
+  padding-left: 20px; /* Поля вокруг блока */
+}

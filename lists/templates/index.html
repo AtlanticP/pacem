@@ -5,7 +5,10 @@
 {% block title %}index.html{% endblock %}
 
 {% block body %}
-		{% for item in list.item_set.all %}
-			<pre>{{ item.name }}</pre>
+		{% for list in lists %}
+    
+    <div class='name_code'>
+      <p><h3>{{ forloop.counter }}. {{ item.name }}</h3></p>
+    </div>
 		{% endfor %}
 {% endblock %}

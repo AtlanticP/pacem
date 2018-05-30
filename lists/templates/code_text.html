@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}index.html{% endblock %}
+
+{% block body %}
+		{% for item in list.item_set.all %}
+    <div class='name_code'>
+      <p><h3>{{ item.name }}</h3></p>
+    </div>
+    <div class='decsription_code'>
+      <p>{{ item.description }}</p>
+    </div>
+    <div class='text_code'>
+      <pre>{{ item.code }}</pre>
+    </div>
+		{% endfor %}
+{% endblock %}

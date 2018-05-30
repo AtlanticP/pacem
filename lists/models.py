@@ -15,3 +15,6 @@ class Item(models.Model):
   name_r = models.CharField(max_length=20, default='') # to use for russian language
   description = models.CharField(max_length=500, default='')
   description_r = models.CharField(max_length=500, default='') # to use for russian language
+
+  def __str__(self):
+    return self.name
