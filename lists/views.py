@@ -16,9 +16,9 @@ def list_lan(request):
 
 
 # lists the specific item from a list
-def code_page(request, item_id):
+def code_page(request, lst_name, item_id):
 
-  lst = List.objects.get(lan='python')
+  lst = List.objects.get(lan=lst_name)
   item = Item.objects.get(id=item_id)
   return render(request, 'code_text.html', {'item': item})
 
