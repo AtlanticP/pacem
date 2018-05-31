@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}index.html{% endblock %}
+
+{% block body %}
+    {% for item in list.item_set.all %}
+    
+    <div class="name_code">
+      <a href="{% url 'code_page' item.id %}"><h3>{{ forloop.counter }}. {{ item }}</h3></p>
+    </div>
+    {% endfor %}
+{% endblock %}
