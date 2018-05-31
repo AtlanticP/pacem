@@ -20,14 +20,14 @@ class IndexPageTest(TestCase):
 
 class LanListsTest(TestCase):
   
-  def test_lists_item_page(self):
+  def test_lists_lan_page(self):
     lan = 'python'
     List.objects.create(lan=lan)
     response = self.client.get(f'/{lan}/')
     self.assertTemplateUsed(response, 'list_lan.html')
 
   # @skip('delete items')
-  def test_code_page_data(self):
+  def test_list_lan_page_content(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
     Item.objects.create(
@@ -43,25 +43,27 @@ class CodePageTest(TestCase):
   def test_code_page(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
-    Item.objects.create(
+    item = Item.objects.create(
       lst=lst, name='eng name', name_r='имя',
       description='eng description', description_r='описание',
       code='coding',
     )
-    response = self.client.get(f'/{lan}/{lst.id}/')
+    
+    response = self.client.get(f'/{lan}/{item.id}/')
+    
     self.assertTemplateUsed(response, 'code_text.html')
 
-  def test_python_code_page_data(self):
+  def test_python_code_page_content(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
     Item.objects.create(
       lst=lst, name='eng name', name_r='имя',
       description='eng description', description_r='описание',
-      code='coding',
+      code='coding'
     )
+    
     response = self.client.get(f'/{lan}/{lst.id}/')
-    # import pdb; pdb.set_trace()
-    # self.assertContains(response, 'oooooo')
+
     self.assertContains(response, 'eng name')
     self.assertContains(response, 'coding')
     self.assertContains(response, 'eng description')
@@ -70,8 +72,11 @@ class CreateDBTest(TestCase):
 
   def test_can_save_a_POST_request(self):
     lst = List.objects.create(lan='python')
-    response = self.client.post('/do/', data={
-      'code': 'code', 'name': 'name', 'name_r': 'имя', 
+    
+    self.client.post('/do/', data={
+      'code': 'code', 'name': 'name eng', 'name_r': 'имя', 
       'description': 'description', 'description_r': 'описание'
     })
+    
     self.assertEqual(Item.objects.count(), 1)
+    self.assertIn('name eng', Item.objects.first().name)
