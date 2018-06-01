@@ -1,8 +1,9 @@
+from django.urls import resolve
 from django.test import TestCase
 from lists.models import List, Item
 from unittest import skip
 
-from lists.views import index
+from lists.views import index, list_lan, create_article
 
 class IndexPageTest(TestCase):
 
@@ -16,18 +17,21 @@ class IndexPageTest(TestCase):
     lan = 'python'
     lst = List.objects.create(lan=lan)
     response = self.client.get('/')
-    self.assertContains(response, 'python')    
+    self.assertContains(response, lan)    
 
 class LanListsTest(TestCase):
   
   def test_lists_lan_page(self):
     lan = 'python'
     List.objects.create(lan=lan)
+    
+    found = resolve(f'/{lan}/')
+    self.assertEqual(found.func, list_lan)
+
     response = self.client.get(f'/{lan}/')
     self.assertTemplateUsed(response, 'list_lan.html')
 
-  # @skip('delete items')
-  def test_list_lan_page_content(self):
+  def test_lists_lan_page_content(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
     Item.objects.create(
@@ -49,11 +53,9 @@ class CodePageTest(TestCase):
       code='coding',
     )
     
-    # response = self.client.get(f'/{lan}/{item.id}/')
-    # import pdb; pdb.set_trace()
-    # self.assertTemplateUsed(response, 'code_text.html')
-
-  @skip('because of the above test')
+    response = self.client.get(f'/{lan}/{item.id}/')
+    self.assertTemplateUsed(response, 'code_text.html')
+    
   def test_python_code_page_content(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
@@ -72,12 +74,16 @@ class CodePageTest(TestCase):
 class CreateDBTest(TestCase):
 
   def test_can_save_a_POST_request(self):
-    lst = List.objects.create(lan='python')
+    List.objects.create(lan='python')
+    
+    found = resolve('/do/')
+    self.assertEqual(found.func, create_article)
     
     self.client.post('/do/', data={
       'code': 'code', 'name': 'name eng', 'name_r': 'имя', 
       'description': 'description', 'description_r': 'описание'
     })
+    
     
     self.assertEqual(Item.objects.count(), 1)
     self.assertIn('name eng', Item.objects.first().name)
