@@ -2,6 +2,10 @@ body {
 	background-color: #62639B;
 }
 
+a {
+  color: #65AA03;
+}
+
 .text_code {
   background: #a192b5;
   padding: 10px; /* Поля вокруг блока */
@@ -10,5 +14,9 @@ body {
 }
 
 .name_code {
+  padding-left: 20px; /* Поля вокруг блока */
+}
+
+.decsription_code{
   padding-left: 20px; /* Поля вокруг блока */
 }
