@@ -8,7 +8,7 @@
     {% for item in list.item_set.all %}
     
     <div class="name_code">
-      <a href="{% url 'list_lan' item.id %}"><h3>{{ forloop.counter }}. {{ item }}</h3></p>
+      <a href="{% url 'code_page' list.lan item.id %}"><h3>{{ forloop.counter }}. {{ item }}</h3></p>
     </div>
     
     {% endfor %}
