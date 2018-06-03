@@ -8,7 +8,7 @@
 		{% for list in lists %}
     
     <div class='name_code'>
-      <p><h3>{{ forloop.counter }}. {{ list }}</h3></p>
+      <a href="{% url 'list_lan' list.lan %}"><h3>{{ forloop.counter }}. {{ list.lan }}</h3></a>
     </div>
 		{% endfor %}
 {% endblock %}

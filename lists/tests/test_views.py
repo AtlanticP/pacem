@@ -6,17 +6,23 @@ from unittest import skip
 from lists.views import index, list_lan, create_article
 
 class IndexPageTest(TestCase):
-
+  
   def test_index_page(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
+    
     response = self.client.get('/')
+    
     self.assertTemplateUsed(response, 'index.html')
 
-  def test_assert_index_page_data(self):
+  def test_index_page_context(self):
     lan = 'python'
-    lst = List.objects.create(lan=lan)
+    List.objects.create(lan=lan)
+    lst = List.objects.create(lan='js')
+    
     response = self.client.get('/')
+    
+    self.assertIn('js', response.content.decode())
     self.assertContains(response, lan)    
 
 class LanListsTest(TestCase):
@@ -39,7 +45,10 @@ class LanListsTest(TestCase):
       description='eng description', description_r='описание',
       code='coding',
     )
+
     response = self.client.get(f'/{lan}/')
+
+    self.assertIsInstance(response.context['list'], List)
     self.assertContains(response, 'eng name')
 
 class CodePageTest(TestCase):

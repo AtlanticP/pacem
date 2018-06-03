@@ -1,8 +1,6 @@
 from django.test import TestCase
 
 from lists.models import List, Item
-# from lists.models.Item 
-# lst, code, name, name_r, description, description_r
 
 class ModelListAndItemTest(TestCase):
 
