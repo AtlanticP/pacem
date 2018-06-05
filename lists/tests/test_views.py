@@ -5,7 +5,13 @@ from unittest import skip
 
 from lists.views import index, list_lan, create_article
 
-class IndexPageTest(TestCase):
+class BaseTest(TestCase):
+
+  def assert_lists_context(self, response):
+    lists = List.objects.all()
+    return self.assertEqual(len(response.context['lists']), len(lists))
+
+class IndexPageTest(BaseTest):
   
   def test_index_page(self):
     lan = 'python'
@@ -14,6 +20,8 @@ class IndexPageTest(TestCase):
     response = self.client.get('/')
     
     self.assertTemplateUsed(response, 'index.html')
+    self.assert_lists_context(response)
+
 
   def test_index_page_context(self):
     lan = 'python'
@@ -25,7 +33,7 @@ class IndexPageTest(TestCase):
     self.assertIn('js', response.content.decode())
     self.assertContains(response, lan)    
 
-class LanListsTest(TestCase):
+class LanListsTest(BaseTest):
   
   def test_lists_lan_page(self):
     lan = 'python'
@@ -35,7 +43,9 @@ class LanListsTest(TestCase):
     self.assertEqual(found.func, list_lan)
 
     response = self.client.get(f'/{lan}/')
+    
     self.assertTemplateUsed(response, 'list_lan.html')
+    self.assert_lists_context(response)
 
   def test_lists_lan_page_content(self):
     lan = 'python'
@@ -51,7 +61,7 @@ class LanListsTest(TestCase):
     self.assertIsInstance(response.context['list'], List)
     self.assertContains(response, 'eng name')
 
-class CodePageTest(TestCase):
+class CodePageTest(BaseTest):
 
   def test_code_page(self):
     lan = 'python'
@@ -63,7 +73,9 @@ class CodePageTest(TestCase):
     )
     
     response = self.client.get(f'/{lan}/{item.id}/')
+    
     self.assertTemplateUsed(response, 'code_text.html')
+    self.assert_lists_context(response)
     
   def test_python_code_page_content(self):
     lan = 'python'
