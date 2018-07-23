@@ -1,0 +1,125 @@
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jul 20 16:30:29 2018] ***
+compiled with version: 5.4.0 20160609 on 20 July 2018 10:17:34
+os: Linux-4.4.0-130-generic #156-Ubuntu SMP Thu Jun 14 08:53:28 UTC 2018
+nodename: 181991.simplecloud.ru
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/atl/django/pacem/pacem
+detected binary path: /home/atl/django/pacem/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 1813
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address pacem.sock fd 3
+Python version: 3.7.0 (default, Jul 20 2018, 12:06:57)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x15eb590
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72920 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x15eb590 pid: 22417 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22417, cores: 1)
+Invalid HTTP_HOST header: 'www.pacem.ru'. You may need to add 'www.pacem.ru' to ALLOWED_HOSTS.
+[pid: 22417|app: 0|req: 1/1] 185.36.159.6 () {42 vars in 706 bytes} [Fri Jul 20 13:32:37 2018] GET / => generated 55233 bytes in 42 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jul 20 16:33:21 2018] ***
+compiled with version: 5.4.0 20160609 on 20 July 2018 10:17:34
+os: Linux-4.4.0-130-generic #156-Ubuntu SMP Thu Jun 14 08:53:28 UTC 2018
+nodename: 181991.simplecloud.ru
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/atl/django/pacem/pacem
+detected binary path: /home/atl/django/pacem/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 1813
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address pacem.sock fd 3
+Python version: 3.7.0 (default, Jul 20 2018, 12:06:57)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xf14590
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72920 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xf14590 pid: 22519 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22519, cores: 1)
+Invalid HTTP_HOST header: 'www.pacem.ru'. You may need to add 'www.pacem.ru' to ALLOWED_HOSTS.
+[pid: 22519|app: 0|req: 1/1] 185.36.159.6 () {42 vars in 706 bytes} [Fri Jul 20 13:33:24 2018] GET / => generated 55233 bytes in 41 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: 'www.pacem.ru'. You may need to add 'www.pacem.ru' to ALLOWED_HOSTS.
+[pid: 22519|app: 0|req: 2/2] 185.36.159.6 () {42 vars in 706 bytes} [Fri Jul 20 13:34:52 2018] GET / => generated 55233 bytes in 39 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+Invalid HTTP_HOST header: 'www.pacem.ru'. You may need to add 'www.pacem.ru' to ALLOWED_HOSTS.
+[pid: 22519|app: 0|req: 3/3] 185.36.159.6 () {42 vars in 706 bytes} [Fri Jul 20 13:35:32 2018] GET / => generated 55233 bytes in 43 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jul 20 16:36:42 2018] ***
+compiled with version: 5.4.0 20160609 on 20 July 2018 10:17:34
+os: Linux-4.4.0-130-generic #156-Ubuntu SMP Thu Jun 14 08:53:28 UTC 2018
+nodename: 181991.simplecloud.ru
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/atl/django/pacem/pacem
+detected binary path: /home/atl/django/pacem/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 1813
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address pacem.sock fd 3
+Python version: 3.7.0 (default, Jul 20 2018, 12:06:57)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x24f6590
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72920 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x24f6590 pid: 22626 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 22626, cores: 1)
+[pid: 22626|app: 0|req: 1/1] 185.36.159.6 () {42 vars in 706 bytes} [Fri Jul 20 13:36:48 2018] GET / => generated 2174 bytes in 31 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22626|app: 0|req: 2/2] 185.36.159.6 () {42 vars in 725 bytes} [Fri Jul 20 13:36:51 2018] GET /Python/ => generated 3474 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 110 bytes (2 switches on core 0)
+[pid: 22626|app: 0|req: 3/3] 185.36.159.6 () {42 vars in 726 bytes} [Fri Jul 20 13:36:53 2018] GET /Tdd/ => generated 2492 bytes in 5 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22626|app: 0|req: 4/4] 185.36.159.6 () {42 vars in 723 bytes} [Fri Jul 20 13:36:59 2018] GET /Sql/ => generated 2120 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22626|app: 0|req: 5/5] 185.36.159.6 () {42 vars in 729 bytes} [Fri Jul 20 13:37:00 2018] GET /Python/ => generated 3474 bytes in 7 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22626|app: 0|req: 6/6] 185.36.159.6 () {42 vars in 726 bytes} [Fri Jul 20 13:37:01 2018] GET /Tdd/ => generated 2492 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 22626|app: 0|req: 7/7] 185.36.159.6 () {42 vars in 729 bytes} [Fri Jul 20 13:37:04 2018] GET /Tdd/18/ => generated 6430 bytes in 6 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.17.1 (64bit) on [Fri Jul 20 21:07:31 2018] ***
+compiled with version: 5.4.0 20160609 on 20 July 2018 10:17:34
+os: Linux-4.4.0-130-generic #156-Ubuntu SMP Thu Jun 14 08:53:28 UTC 2018
+nodename: 181991.simplecloud.ru
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 1
+current working directory: /home/atl/django/pacem/pacem
+detected binary path: /home/atl/django/pacem/venv/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+*** WARNING: you are running uWSGI without its master process manager ***
+your processes number limit is 1813
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address pacem.sock fd 3
+Python version: 3.7.0 (default, Jul 20 2018, 12:06:57)  [GCC 5.4.0 20160609]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0xa7e590
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 72920 bytes (71 KB) for 1 cores
+*** Operational MODE: single process ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xa7e590 pid: 31713 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI worker 1 (and the only) (pid: 31713, cores: 1)
+[pid: 31713|app: 0|req: 1/1] 127.0.0.1 () {32 vars in 334 bytes} [Fri Jul 20 18:07:38 2018] GET / => generated 26 bytes in 38 msecs (HTTP/1.1 400) 1 headers in 53 bytes (1 switches on core 0)
+[pid: 31713|app: 0|req: 2/2] 89.223.91.88 () {32 vars in 336 bytes} [Fri Jul 20 18:07:51 2018] GET / => generated 2174 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 110 bytes (1 switches on core 0)
