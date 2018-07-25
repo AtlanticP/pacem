@@ -108,3 +108,10 @@ class CreateDBTest(TestCase):
     
     self.assertEqual(Item.objects.count(), 1)
     self.assertIn('name eng', Item.objects.first().name)
+
+class AboutMeTest(TestCase):
+
+  def test_about_me_assert_template_used(self):
+
+    response = self.client.get('/contacts/')
+    self.assertTemplateUsed(response, 'contacts.html')

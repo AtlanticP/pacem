@@ -5,8 +5,7 @@
 {% block title %}index.html{% endblock %}
 
 {% block body %}
-		{% for list in lists %}
-    
+    {% for list in lists %}
     <div class='name_code'>
       <a href="{% url 'list_lan' list.lan %}"><h3>{{ forloop.counter }}. {{ list.lan }}</h3></a>
     </div>

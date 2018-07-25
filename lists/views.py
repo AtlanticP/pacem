@@ -43,3 +43,7 @@ def create_article(request):
       {
       'summed_items': summed_items, 'item_form': item_form, 'lists': lists
       })
+
+def contacts(request):
+  lists = List.objects.all()
+  return render(request, 'contacts.html', {'lists': lists})
