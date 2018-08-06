@@ -119,7 +119,18 @@ class AboutMeTest(TestCase):
 
 class jQueryTest(TestCase):
 
-  def test_index_jQuery(self):
+  def test_jQuery_base_context(self):
+    
+    lst = List.objects.create(lan='jQuery')
+    lst = List.objects.create(lan='another_list')
+
+    response = self.client.get('/jQuery/')
+
+    lists = List.objects.all()
+
+    self.assertEqual(len(response.context['lists']), len(lists))
+
+  def test_jQuery_index(self):
 
     lan = 'jQuery'
     lst = List.objects.create(lan=lan)
@@ -135,3 +146,15 @@ class jQueryTest(TestCase):
     
     self.assertEqual(context_variable.item_set.first().name, 'jQuery Test')
     self.assertContains(response, 'jQuery Test')
+
+  def test_jQuery_page(self):
+  
+    lan = 'jQuery'
+    lst = List.objects.create(lan=lan)
+    item = Item.objects.create(lst=lst, name='jQuery Test', code='jQuery Page with a code')
+
+    response = self.client.get(f'/jQuery/{item.id}/')
+
+    self.assertTemplateUsed(response, 'jQuery_view_page.html')
+    self.assertContains(response, 'jQuery Test')
+    self.assertContains(response, 'jQuery Page with a code')

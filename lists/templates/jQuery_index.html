@@ -13,8 +13,81 @@
 
   <ul>
     {% for item in list.item_set.all %}
-      <li><a href="#">{{ item.name }}</a></li>
+      <li><a href="{% url 'jQuery_view' item.id %}">{{ item.name }}</a></li>
     {% endfor %}
   </ul>
+
+  <h3>Effects and animations</h3>
+      
+      <button class="btn" id="btnFadeOut">Fade Out</button>
+      <button class="btn" id="btnFadeIn">Fade In</button>
+      <button class="btn" id="btnFadeTog">Fade Toggle</button>
+
+      <hr>
+
+      <button class="btn" id="btnSlideUp">Slide Up</button>
+      <button class="btn" id="btnSlideDown">Slide Down</button>
+      <button class="btn" id="btnSlideTog">Slide  Toggle</button>
+      <button class="btn" id="btnStop">Stop</button>
+
+      <hr/>
+
+      <button class="btn" id="btnMoveRight">Move Right</button>
+      <button class="btn" id="btnMoveLeft">Move Left</button>
+      <button class="btn" id="btnMoveAround">Move Around</button>
+
+      <hr/>
+
+      <div id="box"></div>
+
+      <hr/>
+
+  <h3>DOM manipulation</h3>
+
+      <hr/>
+
+    <button id="btn1">Toggle third paragraph</button>
+    <p class="para1">This is first paragraph</p>
+    <p class="para2">This is second paragraph</p>
+    <p class="para3">This is third paragraph</p>
+
+  <div id="myDiv"></div>
+
+  <input type="text" id="newItem" placeholder="Input a value to add a list" />
+
+  <ul id='list'>
+    <li>List One.</li>
+    <li>List Two.</li>
+  </ul>
+
+  <!-- <a href="http://www.yandex.ru">Yandex.ru in a new blank</a></br></br> -->
+
+  <!-- <input type="text" id="newItem" /> -->
+  <h4>A list of users from an output array:</h4>
+  <ul id='users'></ul>
+
+  <hr/>
+
+  <h3>jQuery Mouse Events</h3>
+
+    <h3>Mouse events</h3>
+  <button id="but_hide">hide</button>
+  <button id="but_show">show</button>
+  <button id="but_tog">toggle (dblclick) to hide/show</button>
+  <button id="but_hover">hover</button>
+  <button id="button5">mouseenter/mouseleave</button>
+  <button id="button6">mousemove</button>
+  <button id="button7">mouseup/mousedown</button>
+  <button id="button8" class="btnClass">pass parametr e (console)</button>
+  <button id="button9">coordinates mousemove (console)</button>
+  <br/>
+  <div id="para1">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+  </div>
+  <div id="coords"><h6></h6></div>
+
+  <script type="text/javascript" src="{% static 'lists/jQuery/jQuery_effects_and_annimation.js' %}"></script>
+  <script type="text/javascript" src="{% static 'lists/jQuery/jQuery_DOM_manipulation.js' %}"></script>
+    <script type="text/javascript" src="{% static 'lists/jQuery/jQuery_mouse_events.js' %}"></script>
 
 {% endblock %}

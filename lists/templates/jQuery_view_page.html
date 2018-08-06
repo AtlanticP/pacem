@@ -1,0 +1,20 @@
+
+{% extends 'jQuery_base.html' %}
+
+{% block title %}{{ item.name }}{% endblock %}
+
+{% block course_name %}{{ item.name }}{% endblock %}
+
+{% block body %}
+  
+  <div class="name_code">
+      <p><h2>{{ item.name }}</h2></p>
+  </div>
+
+  <div class="decsription_code">
+  <p>{{ item.description }}</p>
+
+  <div class="text_code"><pre>{{ item.code }}</pre></div>
+
+{% endblock %}
+

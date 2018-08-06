@@ -6,25 +6,32 @@
   <title>{% block title %}{% endblock %}</title>
   
   <!-- jQuery style.css -->
-  <link rel="stylesheet" type="text/css" href="{% static 'lists/style_jQuery.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'lists/jQuery/style_jQuery.css' %}">
+
+  <!-- JQuery, Bootstrap js-files -->
+  <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
 
 </head>
 <body>
 
   <header>
+    
     <div class="nav-item">
       <a id='jQuery_main_link' href="{% url 'index' %}"><img src="{% static 'lists/leo.jpg' %}" width="45" height="40"></a> 
     </div>
-    <h1>jQuery Crash Course {% block course_name %}{% endblock %}</h1>
-    <h6>{% block link %}{% endblock %}</h6>
+    
+    <h1>jQuery Crash Course</h1><h3>{% block course_name %}{% endblock %}</h3>
+    
+    <a id="source" href="{% block link %}{% endblock %}">Ресурс</a><br/>
+
+    {% for list in lists %}
+      <a href="{% url 'list_lan' list%}">{{ list }}</a>
+    {% endfor %}
+
   </header>
   
-  {% block body %}
-  {% endblock %}
+  {% block body %}{% endblock %}
   
-  <!-- JQuery, Bootstrap js-files -->
-  <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
-  {% block jQuery_script%}{% endblock %}
 
 </body>
 </html>

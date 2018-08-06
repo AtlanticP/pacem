@@ -52,8 +52,10 @@ def contacts(request):
 
 def jQuery_index(request):
   jquery_list = List.objects.get(lan='jQuery')
-  # import pdb; pdb.set_trace()  
-  return render(request, 'jQuery_index.html', {'list': jquery_list})
+  lists = List.objects.all()
+  return render(request, 'jQuery_index.html', {'list': jquery_list, 'lists': lists})
 
 def jQuery_view(request, item_id):
-  pass
+  item = Item.objects.get(id=item_id)
+  context = {'item': item}
+  return render(request, 'jQuery_view_page.html', context)

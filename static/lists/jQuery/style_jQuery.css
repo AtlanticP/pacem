@@ -1,0 +1,51 @@
+/*jQuery */
+
+body {
+  background-color: #8D8B86;
+  font-size: 17px;
+  fant-family: arial;
+  line-height: 1.5em;
+}
+
+header {
+  background: #333;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 4px #000 solid;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #0A5908;
+}
+
+.text_code {
+  background-color: #A48EBE;
+  margin: 10px;
+};
+
+#box2 {
+  background: #333;
+  color: #fff;
+  width: 350px;
+  height: 70px;
+  padding: 40px;
+  text-align: center;
+}
+
+#box {
+  background: red;
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.myClass {
+  color: blue;
+  background: black;
+}
+
+a#source {
+  color: #18D2FF;
+}
