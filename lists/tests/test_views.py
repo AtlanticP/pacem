@@ -115,3 +115,23 @@ class AboutMeTest(TestCase):
 
     response = self.client.get('/contacts/')
     self.assertTemplateUsed(response, 'contacts.html')
+
+
+class jQueryTest(TestCase):
+
+  def test_index_jQuery(self):
+
+    lan = 'jQuery'
+    lst = List.objects.create(lan=lan)
+    item = Item.objects.create(lst=lst, name='jQuery Test')
+
+    response = self.client.get('/jQuery/')
+
+    self.assertTemplateUsed(response, 'jQuery_index.html')
+    self.assertContains(response, 'jQuery Crash Course')
+
+    context_variable = List.objects.get(lan='jQuery')
+    self.assertEqual(response.context['list'], context_variable)
+    
+    self.assertEqual(context_variable.item_set.first().name, 'jQuery Test')
+    self.assertContains(response, 'jQuery Test')

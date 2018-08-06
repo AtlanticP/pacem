@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '4yart)n9($4b0p0(w_!h-_z#e!i-4_=wj-xii^gd*c(@rh7zy9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'pacem.ru', 'www.pacem.ru',]
+ALLOWED_HOSTS = ['pacem.ru', 'www.pacem.ru', '127.0.0.1']
 
 
 # Application definition

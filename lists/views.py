@@ -9,6 +9,7 @@ def index(request):
 
 # lists the list of a particular list
 def list_lan(request, lst_name):
+
   lst = List.objects.get(lan=lst_name)
   lists = List.objects.all()
   return render(request, 'list_lan.html', {'list': lst, 'lists': lists}) 
@@ -26,6 +27,7 @@ def create_article(request):
 
   lists = List.objects.all()
   lst = List.objects.get(lan='python')
+  
   if request.method == 'POST':
     item_form = ExistingListItemForm(for_list=lst, data=request.POST)
     
@@ -47,3 +49,11 @@ def create_article(request):
 def contacts(request):
   lists = List.objects.all()
   return render(request, 'contacts.html', {'lists': lists})
+
+def jQuery_index(request):
+  jquery_list = List.objects.get(lan='jQuery')
+  # import pdb; pdb.set_trace()  
+  return render(request, 'jQuery_index.html', {'list': jquery_list})
+
+def jQuery_view(request, item_id):
+  pass

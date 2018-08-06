@@ -1,0 +1,20 @@
+
+{% extends 'jQuery_base.html' %}
+
+{% load static %}
+
+{% block title %}jQuery index{% endblock %}
+
+{%block link %}
+  https://www.youtube.com/watch?v=3nrLc_JOF7k&list=PLillGF-RfqbYJVXBgZ_nA7FTAAEpp_IAc
+{% endblock %}
+
+{% block body %}
+
+  <ul>
+    {% for item in list.item_set.all %}
+      <li><a href="#">{{ item.name }}</a></li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
