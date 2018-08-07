@@ -10,7 +10,7 @@ class List(models.Model):
 
 class Item(models.Model):
   
-  lst = models.ForeignKey(List, on_delete=models.CASCADE)
+  lst = models.ForeignKey(List, on_delete=models.CASCADE, default='')
   code = models.TextField()
   name = models.CharField(max_length=20, default='')
   name_r = models.CharField(max_length=20, default='') # to use for russian language
@@ -25,4 +25,5 @@ class Graph(models.Model):
   termin = models.CharField(max_length=20, default='')
   definition = models.TextField()
   description = models.TextField()
+  lst = models.ForeignKey(List, on_delete=models.CASCADE)
 
