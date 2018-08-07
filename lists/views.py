@@ -51,11 +51,16 @@ def contacts(request):
   return render(request, 'contacts.html', {'lists': lists})
 
 def jQuery_index(request):
+  
   jquery_list = List.objects.get(lan='jQuery')
   lists = List.objects.all()
+  
   return render(request, 'jQuery_index.html', {'list': jquery_list, 'lists': lists})
 
 def jQuery_view(request, item_id):
+  
+  lists = List.objects.all()
   item = Item.objects.get(id=item_id)
-  context = {'item': item}
-  return render(request, 'jQuery_view_page.html', context)
+  # context = {'item': item, 'lists': lists}
+
+  return render(request, 'jQuery_index.html', {'item': item, 'lists': lists})

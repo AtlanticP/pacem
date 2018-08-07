@@ -1,7 +1,7 @@
 /*jQuery */
 
 body {
-  background-color: #8D8B86;
+  background-color: #787E87;
   font-size: 17px;
   fant-family: arial;
   line-height: 1.5em;
@@ -17,7 +17,7 @@ header {
 }
 
 a {
-  color: #0A5908;
+  color: #86D818;
 }
 
 .text_code {
@@ -49,3 +49,4 @@ a {
 a#source {
   color: #18D2FF;
 }
+
