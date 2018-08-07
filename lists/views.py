@@ -63,4 +63,4 @@ def jQuery_view(request, item_id):
   item = Item.objects.get(id=item_id)
   # context = {'item': item, 'lists': lists}
 
-  return render(request, 'jQuery_index.html', {'item': item, 'lists': lists})
+  return render(request, 'jQuery_view_page.html', {'item': item, 'lists': lists})
