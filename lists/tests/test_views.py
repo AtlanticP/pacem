@@ -152,7 +152,6 @@ class jQueryTest(TestCase):
     self.assertTemplateUsed(response, 'jQuery_view_page.html')
     self.assertContains(response, 'jQuery Test')
     self.assertContains(response, 'jQuery Page with a code')
-    import pdb; pdb.set_trace()
     self.assertEqual(len(response.context['lists']), len(lists))
 
   

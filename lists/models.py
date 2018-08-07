@@ -9,6 +9,7 @@ class List(models.Model):
 
 
 class Item(models.Model):
+  
   lst = models.ForeignKey(List, on_delete=models.CASCADE)
   code = models.TextField()
   name = models.CharField(max_length=20, default='')
@@ -18,3 +19,10 @@ class Item(models.Model):
 
   def __str__(self):
     return self.name
+
+class Graph(models.Model):
+  
+  termin = models.CharField(max_length=20, default='')
+  definition = models.TextField()
+  description = models.TextField()
+

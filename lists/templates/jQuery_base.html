@@ -25,7 +25,7 @@
     <a id="source" href="{% block link %}{% endblock %}">Ресурс</a><br/>
 
     {% for list in lists %}
-      <a href="{% url 'list_lan' list%}">{{ list }}</a>
+      <a href="{% url 'list_lan' list%}">{{ list }}</a>&nbsp&nbsp
     {% endfor %}
 
   </header>
