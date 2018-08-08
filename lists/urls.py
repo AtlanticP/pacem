@@ -8,6 +8,7 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('jQuery/', views.jQuery_index),
     path('jQuery/<int:item_id>/', views.jQuery_view, name='jQuery_view'),
+    path('Theory/', views.theory_list_view, name='theory_view'),
     path('<str:lst_name>/', views.list_lan, name='list_lan'),
     path('<str:lst_name>/<int:item_id>/', views.code_page, name='code_page'),
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from lists.models import List, Item
+from lists.models import List, Item, Graph
 from lists.forms import ItemForm, ExistingListItemForm
 
 def index(request):
@@ -52,15 +52,25 @@ def contacts(request):
 
 def jQuery_index(request):
   
-  jquery_list = List.objects.get(lan='jQuery')
+  graph = Graph.objects.all()
   lists = List.objects.all()
-  
-  return render(request, 'jQuery_index.html', {'list': jquery_list, 'lists': lists})
+  context = {'graph': graph, 'lists': lists}
+  return render(request, 'jQuery_index.html', context)
 
 def jQuery_view(request, item_id):
   
   lists = List.objects.all()
   item = Item.objects.get(id=item_id)
-  # context = {'item': item, 'lists': lists}
+  context = {'item': item, 'lists': lists}
 
-  return render(request, 'jQuery_view_page.html', {'item': item, 'lists': lists})
+  return render(request, 'jQuery_view_page.html', context)
+
+def theory_list_view(request):
+
+  theory_list = List.objects.get(lan='Theory')
+  lists = List.objects.all()
+  context = {'list': theory_list, 'lists': lists}
+  
+  return render(request, 'theory_lists.html', context)
+
+

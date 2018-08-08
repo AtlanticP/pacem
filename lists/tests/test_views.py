@@ -1,6 +1,6 @@
 from django.urls import resolve
 from django.test import TestCase
-from lists.models import List, Item
+from lists.models import List, Item, Graph
 from unittest import skip
 
 from lists.views import index, list_lan, create_article
@@ -153,5 +153,19 @@ class jQueryTest(TestCase):
     self.assertContains(response, 'jQuery Test')
     self.assertContains(response, 'jQuery Page with a code')
     self.assertEqual(len(response.context['lists']), len(lists))
+
+class TheoryTest(TestCase):
+
+  def test_theory_lists(self):
+
+    graph = Graph.objects.all()
+    lists = List.objects.all()
+    
+    response = self.client.get(f'/Theory/')
+
+    self.assertTemplateUsed(response, 'theory_lists.html')
+    # self.assertEqual(response.context['graph'], lst)
+    # self.assertEqual(len(response.context['lists']), len(lists))
+    # import pdb; pdb.set_trace()
 
   
