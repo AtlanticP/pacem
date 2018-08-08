@@ -24,6 +24,6 @@ class Graph(models.Model):
   
   termin = models.CharField(max_length=20, default='')
   definition = models.TextField()
-  description = models.TextField()
+  # description = models.TextField()
   lst = models.ForeignKey(List, on_delete=models.CASCADE)
 

@@ -52,10 +52,9 @@ def contacts(request):
 
 def jQuery_index(request):
   
-  graph = Graph.objects.all()
+  jquery_list = List.objects.get(lan='jQuery')
   lists = List.objects.all()
-  context = {'graph': graph, 'lists': lists}
-  return render(request, 'jQuery_index.html', context)
+  return render(request, 'jQuery_index.html', {'list': jquery_list, 'lists': lists})
 
 def jQuery_view(request, item_id):
   
@@ -69,7 +68,9 @@ def theory_list_view(request):
 
   theory_list = List.objects.get(lan='Theory')
   lists = List.objects.all()
-  context = {'list': theory_list, 'lists': lists}
+  
+  graph = Graph.objects.all()
+  context = {'graph': graph, 'lists': lists}
   
   return render(request, 'theory_lists.html', context)
 

@@ -1,8 +1,8 @@
 from django.urls import resolve
 from django.test import TestCase
-from lists.models import List, Item, Graph
 from unittest import skip
 
+from lists.models import List, Item, Graph
 from lists.views import index, list_lan, create_article
 
 class BaseTest(TestCase):
@@ -132,6 +132,7 @@ class jQueryTest(TestCase):
     self.assertContains(response, 'jQuery Crash Course')
 
     context_variable = List.objects.get(lan='jQuery')
+    # import pdb; pdb.set_trace()
     self.assertEqual(response.context['list'], context_variable)
     
     self.assertEqual(context_variable.item_set.first().name, 'jQuery Test')
@@ -158,14 +159,18 @@ class TheoryTest(TestCase):
 
   def test_theory_lists(self):
 
+    lst = List.objects.create(lan='Theory')
+    Graph.objects.create(termin='first termin', lst=lst)
+    Graph.objects.create(termin='second termin', lst=lst)
+
     graph = Graph.objects.all()
     lists = List.objects.all()
     
     response = self.client.get(f'/Theory/')
 
     self.assertTemplateUsed(response, 'theory_lists.html')
-    # self.assertEqual(response.context['graph'], lst)
-    # self.assertEqual(len(response.context['lists']), len(lists))
-    # import pdb; pdb.set_trace()
+    self.assertEqual(len(response.context['graph']), len(graph))
+    self.assertEqual(len(response.context['lists']), len(lists))
+    self.assertIn('first termin', response.content.decode())
 
   
