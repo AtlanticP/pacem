@@ -6,8 +6,8 @@
 
 {% block body %}
   
-  {% for item in graph.objects.all %}
-    <div><span>{{ item }}</span></div>
+  {% for item in graph %}
+    <span>{{ item.termin }}, </span>
   {% endfor %}
 
 {% endblock %}
