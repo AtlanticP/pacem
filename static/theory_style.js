@@ -5,7 +5,7 @@ $('.termin').hover(function(){
   id = '#tooltip_' + ind
 
   console.log($(id).text());
-  $(id).hover();
+  $(id).toggle();
   
 
 });

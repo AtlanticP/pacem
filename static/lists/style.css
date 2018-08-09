@@ -14,9 +14,10 @@ a {
 
 .tooltip {
   display: none;
-  width: 100px;
+  width: 400px;
   height: 100px;
   color: blue;
   position: absolute;
   opacity: .7;
+  top: 600px; left: 300px;
 }

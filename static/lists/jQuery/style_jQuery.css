@@ -50,3 +50,15 @@ a#source {
   color: #18D2FF;
 }
 
+.tooltip {
+  background-color: #ffa141;
+  display: none;
+  text-align: center;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  opacity: .5;
+  top: 300px; left: 300px;
+  font-size: 26px;
+  border: 4px double black;
+}
