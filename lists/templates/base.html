@@ -38,8 +38,7 @@
     </div>
   </nav>
   
-  {% block body %}
-  {% endblock %}
+  {% block body %}{% endblock %}
 
   <nav class="navbar fixed-bottom navbar-light bg-dark">
     <a class="navbar-link" href="{% url 'contacts' %}">Contatcs</a>
@@ -48,7 +47,8 @@
   <!-- JQuery, Bootstrap js-files -->
   <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
   <script type="text/javascript" src="{% static 'lists/bootstrap/js/bootstrap.js' %}"></script>
-
+  
+  {% block bottom %}{% endblock %}
 </body>
 </html>
 
