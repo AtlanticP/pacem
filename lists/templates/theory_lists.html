@@ -7,15 +7,20 @@
 {% block body %}
   
   {% for item in graph %}
-    <span  class="theory_span " id="theory_span_{{ forloop.counter }}">
+    <span  class="termin " id="termin_{{ forloop.counter }}">
       {{ item.termin }}, 
     </span>
   {% endfor %}
  
+  {% for item in graph %}
+    <div  class="tooltip" id="tooltip_{{ forloop.counter }}">
+      {{ item.definition }}, {{ forloop.counter }} 
+    </div>
+  {% endfor %}
+
 {% endblock %}
  
 {% block bottom %}
-  
   <script type="text/javascript" src="{% static 'theory_style.js' %}">
     
   </script>

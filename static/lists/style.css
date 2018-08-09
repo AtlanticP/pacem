@@ -1,5 +1,6 @@
 body {
 	background-color: #62639B;
+  position: relative;
 }
 
 a {
@@ -11,3 +12,11 @@ a {
   margin: 10px;
 };
 
+.tooltip {
+  display: none;
+  width: 100px;
+  height: 100px;
+  color: blue;
+  position: absolute;
+  opacity: .7;
+}
