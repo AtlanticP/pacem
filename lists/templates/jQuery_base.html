@@ -8,7 +8,6 @@
   <!-- jQuery style.css -->
   <link rel="stylesheet" type="text/css" href="{% static 'lists/jQuery/style_jQuery.css' %}">
 
-  <!-- JQuery, Bootstrap js-files -->
   <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
 
 </head>
@@ -16,12 +15,8 @@
 
   <header>
     
-    <div class="nav-item">
-      <a id='jQuery_main_link' href="{% url 'index' %}"><img src="{% static 'lists/leo.jpg' %}" width="45" height="40"></a> 
-    </div>
-    
+    <a id='jQuery_main_link' href="{% url 'index' %}"><img src="{% static 'lists/leo.jpg' %}" width="45" height="40"></a> 
     <h1>jQuery Crash Course</h1><h3>{% block course_name %}{% endblock %}</h3>
-    
     <a id="source" href="{% block link %}{% endblock %}">Ресурс</a><br/>
 
     {% for list in lists %}
