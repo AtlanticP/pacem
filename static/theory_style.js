@@ -1,3 +1,4 @@
+$('#source').hide();
 
 $('.termin').hover(function(){
   
