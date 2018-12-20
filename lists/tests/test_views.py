@@ -14,16 +14,13 @@ class BaseTest(TestCase):
 class IndexPageTest(BaseTest):
   
   def test_index_page(self):
-    lan = 'python'
-    lst = List.objects.create(lan=lan)
-    
     response = self.client.get('/')
     
     self.assertTemplateUsed(response, 'index.html')
     self.assert_lists_context(response)
 
 
-  def test_index_page_context(self):
+  def test_index_page_content(self):
     lan = 'python'
     List.objects.create(lan=lan)
     lst = List.objects.create(lan='js')
@@ -43,11 +40,12 @@ class LanListsTest(BaseTest):
     self.assertEqual(found.func, list_lan)
 
     response = self.client.get(f'/{lan}/')
+
     
     self.assertTemplateUsed(response, 'list_lan.html')
     self.assert_lists_context(response)
 
-  def test_lists_lan_page_content(self):
+  def test_lists_lan_page_context(self):
     lan = 'python'
     lst = List.objects.create(lan=lan)
     Item.objects.create(

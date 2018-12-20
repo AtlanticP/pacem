@@ -25,7 +25,7 @@ SECRET_KEY = '4yart)n9($4b0p0(w_!h-_z#e!i-4_=wj-xii^gd*c(@rh7zy9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pacem.ru', 'www.pacem.ru', '127.0.0.1']
+ALLOWED_HOSTS = ['pacem.ru', 'www.pacem.ru', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -124,3 +124,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
